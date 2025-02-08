@@ -1,0 +1,45 @@
+<html>
+  <body>
+  <h1>Employee data with RxJS</h1>
+  <button class="btn btn-outline-primary" (click)="getAllEmployees()">Display Employee Data</button>
+  <button class="btn btn-outline-danger" (click)="addEmployeeRecord()">Add Record</button>
+  <div *ngIf="hbutton == true">
+  <table class="table table-hover table-bordered" >
+   
+    <thead>
+    <tr>
+      <th>Employee ID</th>
+      <th>name</th>
+      <th>Department</th>
+      <th>Designation</th> 
+    </tr>
+  </thead>
+    <tbody>
+      <tr *ngFor="let e of empLst">
+        <td>{{e.id}}</td>
+        <td>{{e.name}}</td>
+        <td>{{e.dept}}</td>
+        <td>{{e.designation}}</td>
+        <td> <button class="btn btn-primary" (click)="OnEditEmployeeRecord(e)">Edit Record</button>
+         <button class="btn btn-primary" (click)="OnDelectEmployeeRecord(e.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  
+  </table>
+</div>
+  <div *ngIf="bDisplayAddOrEditForm==true" id="registrationForm">
+    <h2>{{strAddOrEditDisplayTitle}}</h2><hr>
+    <form [formGroup]="EmployeeForm" (ngSubmit)="AddOrEditEmployeeRecord()">
+      Employee ID: <br>
+      <input type="text" name="id" formControlName="id"> <br>
+      Name : <br>
+      <input type="text" name="name" formControlName="name"><br>
+      Department : <br>
+      <input type="text" name="dept" formControlName="dept"><br>
+      Designation : <br>
+      <input type="text" name="designation" formControlName="designation"><br>
+      <button class="btn btn-primary" type="submit">submit</button>
+    </form>
+  </div>
+</body>
+</html>
