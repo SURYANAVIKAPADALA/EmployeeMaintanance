@@ -1,0 +1,42 @@
+/* 3D Text Effect */
+.title-3d {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 0 0 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .title-3d:hover {
+    transform: rotateY(10deg) scale(1.1);
+    color: #dc3545;
+  }
+  
+  /* 3D Card Effect */
+  .card-3d {
+    width: 300px;
+    height: 200px;
+    background: #f9f9f9;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card-3d:hover {
+    transform: rotateY(15deg) scale(1.05);
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .card-3d h4 {
+    margin-bottom: 10px;
+  }
+  
+  .card-3d p {
+    font-size: 14px;
+    color: #555;
+  }
+  
